@@ -226,6 +226,24 @@ section.success {
     }
 }
 
+#contact {
+    a {
+        color: @brand-primary;
+    }
+	.btn {
+        border: solid 2px @brand-primary;
+		font-size: 1.5em;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+	        color: @brand-success;
+	        background: white;
+	        border: solid 2px @brand-success;
+        }
+	}
+}
+
 @media(min-width:767px) {
     #portfolio {
         .portfolio-item {
@@ -327,14 +345,23 @@ footer {
 }
 
 .btn-social {
+    color: @brand-primary;
 	display: inline-block;
 	height: 50px;
 	width: 50px;
-	border: 2px solid white;
+	border: 2px solid @brand-primary;
 	border-radius: 100%;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
 	line-height: 45px;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		color: @brand-success;
+		background: white;
+		border: solid 2px @brand-success;
+	}
 }
 
 .btn:focus,
