@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# Replace HTTPS env variable that doesn't work with NFSN wrapper server
+#SetEnvIf X-Forwarded-Proto https HTTPS
+
+# The above doesn't work.
+RewriteCond %{HTTP:X-Forwarded-Proto} https
+RewriteRule .* - [E=HTTPS]
+
+# Enable HSTS but only for already-HTTPS connections per RFC
+# Always is so that non-200 requests (like the redirect below) still work
+Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload" env=HTTPS
+
+Header echo X-Forwarded-Proto
+Header echo X-Nfsn-Https
+
+# If ub3rk1tten.com, redirect to https to set HSTS
+RewriteCond %{HTTP_HOST} ^ub3rk1tten\.com$
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^.*$ https://ub3rk1tten.com%{REQUEST_URI} [L,R=301]
+
+# Hard redirect to main site 
+RewriteCond %{HTTP_HOST} !^mwe\.st$ [OR] 
+RewriteCond %{HTTP:X-Forwarded-Proto} !https 
+RewriteRule ^.*$ https://mwe.st%{REQUEST_URI} [L,R=301] 
