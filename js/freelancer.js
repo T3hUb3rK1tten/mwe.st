@@ -1,5 +1,5 @@
 /*!
- * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
+ * Built using Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
@@ -8,11 +8,19 @@
 $(function() {
     $('body').on('click', '.page-scroll a', function(event) {
         var $anchor = $(this);
-        $('html, body').stop().animate({
+
+        $('body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        }, {
+            queue: 'autoscroll',
+            duration: 1000,
+            easing: 'easeInOutExpo'
+        }).dequeue('autoscroll');
+
         event.preventDefault();
     });
+
+    $(window).bind('mousewheel', function() { $('body').stop('autoscroll'); });
 });
 
 // Floating label headings for the contact form
