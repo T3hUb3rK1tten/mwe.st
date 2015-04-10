@@ -184,6 +184,19 @@ section.success {
 	dl dd {
 		margin-bottom: 20px;
 	}
+
+    .btn-outline {
+        color: white;
+        border: solid 2px white;
+	    &:hover,
+	    &:focus,
+	    &:active,
+	    &.active {
+		    color: @brand-success;
+		    background: white;
+		    border: solid 2px @brand-success;
+	    }
+    }
 }
 
 #portfolio {
@@ -243,18 +256,20 @@ section.success {
     a {
         color: @brand-primary;
     }
-	.btn {
+    
+
+    .btn-outline {
+        color: @brand-primary;
         border: solid 2px @brand-primary;
-		font-size: 1.5em;
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-	        color: @brand-success;
-	        background: white;
-	        border: solid 2px @brand-success;
-        }
-	}
+	    &:hover,
+	    &:focus,
+	    &:active,
+	    &.active {
+		    color: @brand-success;
+		    background: white;
+		    border: solid 2px @brand-success;
+	    }
+    }
 }
 
 @media(min-width:767px) {
@@ -266,20 +281,10 @@ section.success {
 }
 
 .btn-outline {
-	color: white;
 	font-size: 20px;
-	border: solid 2px white;
 	background: transparent;
 	transition: all 0.3s ease-in-out;
 	margin-top: 15px;
-	&:hover,
-	&:focus,
-	&:active,
-	&.active {
-		color: @brand-success;
-		background: white;
-		border: solid 2px white;
-	}
 }
 
 .floating-label-form-group {
@@ -358,23 +363,13 @@ footer {
 }
 
 .btn-social {
-    color: @brand-primary;
 	display: inline-block;
 	height: 50px;
 	width: 50px;
-	border: 2px solid @brand-primary;
 	border-radius: 100%;
 	text-align: center;
 	font-size: 25px;
 	line-height: 45px;
-	&:hover,
-	&:focus,
-	&:active,
-	&.active {
-		color: @brand-success;
-		background: white;
-		border: solid 2px @brand-success;
-	}
 }
 
 .btn:focus,
@@ -416,6 +411,10 @@ footer {
         width: 100%;
         height: 100%;
         border: none;
+    }
+
+    .iframe-border {
+        border: 2px solid @brand-primary;
     }
 }
 
@@ -479,4 +478,22 @@ footer {
     	opacity: 0;
     	display: none;
     }
+    
+    .btn-outline {
+	    color: @brand-primary;
+	    font-size: 20px;
+	    border: solid 2px @brand-primary;
+	    background: transparent;
+	    transition: all 0.3s ease-in-out;
+	    margin-top: 15px;
+	    &:hover,
+	    &:focus,
+	    &:active,
+	    &.active {
+		    color: @brand-success;
+		    background: white;
+		    border: solid 2px @brand-success;
+	    }
+    }
+    
 }
