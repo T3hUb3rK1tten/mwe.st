@@ -9,7 +9,7 @@ $(function() {
     $('body').on('click', '.page-scroll a', function(event) {
         var $anchor = $(this);
 
-        $('body').stop().animate({
+        $('body, html').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
         }, {
             queue: 'autoscroll',
