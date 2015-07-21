@@ -1,6 +1,6 @@
-# Michael West - "Professional Online Portfolio" for school
+# Michael West - Personal Web Site
 
-This is a single page site built using the [Freelancer](http://startbootstrap.com/template-overviews/freelancer/) template. Made for my BCOM 4350 class at UTD. Hosted at [https://pop.mwe.st](https://pop.mwe.st).
+This is a single page site built using the [Freelancer](http://startbootstrap.com/template-overviews/freelancer/) template.
 
 ## Copyright and License
 
