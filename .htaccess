@@ -1,6 +1,5 @@
 Redirect /pgp.asc /96B2EB202D565834E1A0CED417A4F903DFD11EDA.asc
 Redirect /blog https://blog.mwe.st/
-Redirect /resume /resume.html
 Redirect /twitter https://twitter.com/t3hub3rk1tten
 Redirect /facebook https://www.facebook.com/t3hub3rk1tten
 Redirect /linkedin https://www.linkedin.com/in/mwedotst/
@@ -11,3 +10,6 @@ Redirect /spotify https://play.spotify.com/user/t3hub3rk1tten
 Redirect /cash https://cash.me/mwest
 Redirect /steam https://steamcommunity.com/id/T3hUb3rK1tten
 Redirect /googleplus https://plus.google.com/117407372494793948734/posts
+
+RewriteEngine on 
+RewriteRule ^resume$ resume.html [L]
